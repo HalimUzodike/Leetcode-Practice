@@ -80,6 +80,32 @@ class Solution:
         return min(left, right) + 1
 
 
+"""
+Iterative Solution
+
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        queue = [(root, 1)]
+
+        while queue:
+            node, depth = queue.pop(0)
+
+            # If we find a leaf node, return its depth immediately
+            if not node.left and not node.right:
+                return depth
+
+            if node.left:
+                queue.append((node.left, depth + 1))
+            if node.right:
+                queue.append((node.right, depth + 1))
+
+        return 0  # This line will never be reached for valid binary trees
+"""
+
+
 
 # Maximum Depth of Binary Tree
 
@@ -123,3 +149,26 @@ class Solution:
         right = self.maxDepth(root.right)
 
         return max(left, right) + 1
+
+
+"""
+Iterative Solution
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        stack = [(root, 1)]
+        ans = 0
+
+        while stack:
+            node, depth = stack.pop()
+            ans = max(ans, depth)
+            if node.left:
+                stack.append((node.left, depth + 1))
+            if node.right:
+                stack.append((node.right, depth + 1))
+
+        return ans
+"""
