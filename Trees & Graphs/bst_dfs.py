@@ -39,23 +39,45 @@ Note: A leaf is a node with no children.
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# class Solution:
+#     def minDepth(self, root: Optional[TreeNode]) -> int:
+#
+#         if not root:
+#             return 0
+#
+#         if root.left and root.right:
+#             return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
+#
+#         if root.left:
+#             return self.minDepth(root.left) + 1
+#
+#         if root.right:
+#             return self.minDepth(root.right) + 1
+#
+#         else:
+#             return 1
+
+
+# Better solution
+
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
-
         if not root:
             return 0
 
-        if root.left and root.right:
-            return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
-
-        if root.left:
-            return self.minDepth(root.left) + 1
-
-        if root.right:
+        # If the node has no left child, recurse on the right child
+        elif not root.left:
             return self.minDepth(root.right) + 1
 
-        else:
-            return 1
+        # If the node has no right child, recurse on the left child
+        elif not root.right:
+            return self.minDepth(root.left) + 1
+
+        # If the node has both children, take the minimum of the two depths
+        left = self.minDepth(root.left)
+        right = self.minDepth(root.right)
+
+        return min(left, right) + 1
 
 
 
@@ -73,20 +95,31 @@ Note: A leaf is a node with no children.
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# class Solution:
+#     def maxDepth(self, root: Optional[TreeNode]) -> int:
+#
+#         if not root:
+#             return 0
+#
+#         if root.left and root.right:
+#             return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+#
+#         if root.left:
+#             return self.maxDepth(root.left) + 1
+#
+#         if root.right:
+#             return self.maxDepth(root.right) + 1
+#
+#         else:
+#             return 1
+
+
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-
         if not root:
             return 0
 
-        if root.left and root.right:
-            return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
 
-        if root.left:
-            return self.maxDepth(root.left) + 1
-
-        if root.right:
-            return self.maxDepth(root.right) + 1
-
-        else:
-            return 1
+        return max(left, right) + 1
