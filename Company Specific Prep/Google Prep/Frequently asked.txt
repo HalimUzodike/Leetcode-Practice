@@ -1,0 +1,51 @@
+# Frequently asked questions for Google SWE technical interviews
+
+1526. Minimum Number of Increments on Subarrays to Form a Target Array
+
+Hard
+53. Maximum Subarray
+
+Med.
+179. Largest Number
+
+Med.
+386. Lexicographical Numbers
+
+Med.
+5. Longest Palindromic Substring
+
+Med.
+18. 4Sum
+
+Med.
+233. Number of Digit One
+
+Hard
+354. Russian Doll Envelopes
+
+Hard
+440. K-th Smallest in Lexicographical Order
+
+Hard
+570. Managers with at Least 5 Direct Reports
+
+Med.
+652. Find Duplicate Subtrees
+
+Med.
+843. Guess the Word
+
+Hard
+994. Rotting Oranges
+
+Med.
+1101. The Earliest Moment When Everyone Become Friends
+
+Med.
+1110. Delete Nodes And Return Forest
+
+Med.
+1143. Longest Common Subsequence
+
+Med.
+2018. Check if Word Can Be Placed In Crossword
