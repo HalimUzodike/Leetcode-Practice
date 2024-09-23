@@ -100,6 +100,8 @@ array = [[1, 2], [3, 4], [5, 6]]
 Output:
 
 flatten_array(array) -> [1, 2, 3, 4, 5, 6]
+
+Can potentially use isinstance() to check if element is a list
 """
 
 def flatten_array(array):
