@@ -48,7 +48,7 @@ class Solution:
 
             # Update X for the next iteration
             # Subtract the current shift and take modulo 26
-            X = (X - shifts[i]) % 26
+            X = (X - shifts[i])
 
         # Join the list of shifted characters into a string and return
         return "".join(ans)
