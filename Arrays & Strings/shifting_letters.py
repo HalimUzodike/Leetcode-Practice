@@ -35,7 +35,7 @@ class Solution:
         ans = []
 
         # Calculate the total shift (modulo 26 to handle wrap-around)
-        X = sum(shifts) % 26
+        total_shifts = sum(shifts) % 26
 
         # Iterate through each character in the string and its index
         for i, c in enumerate(s):
@@ -44,11 +44,11 @@ class Solution:
 
             # Shift the character and append to the answer list
             # The modulo 26 ensures we stay within the alphabet
-            ans.append(chr(ord('a') + (index + X) % 26))
+            ans.append(chr(ord('a') + (index + total_shifts) % 26))
 
             # Update X for the next iteration
             # Subtract the current shift and take modulo 26
-            X = (X - shifts[i])
+            total_shifts = (total_shifts - shifts[i])
 
         # Join the list of shifted characters into a string and return
         return "".join(ans)
