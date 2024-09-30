@@ -38,9 +38,9 @@ class Solution:
         total_shifts = sum(shifts) % 26
 
         # Iterate through each character in the string and its index
-        for i, c in enumerate(s):
+        for i, char in enumerate(s):
             # Convert the character to its 0-based index in the alphabet
-            index = ord(c) - ord('a')
+            index = ord(char) - ord('a')
 
             # Shift the character and append to the answer list
             # The modulo 26 ensures we stay within the alphabet
