@@ -38,6 +38,7 @@ Constraints:
 #         self.right = right
 class Solution:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
+        # Use helper function
         # As this is a BST then every val to left of root is less and val on right is more
         # Find max diff on each side
         # Find max diff between both sides
