@@ -333,3 +333,4 @@ class Solution:
                 if prefix == "":
                     return ""
         return prefix
+
