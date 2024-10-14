@@ -32,3 +32,23 @@ Constraints:
     0 <= nums[i] <= 1000
 
 """
+
+
+def rob(nums):
+    def simple_rob(nums):
+        rob1, rob2 = 0, 0
+        for n in nums:
+            newRob = max(rob1 + n, rob2)
+            rob1 = rob2
+            rob2 = newRob
+        return rob2
+
+    if len(nums) == 1:
+        return nums[0]
+
+    return max(simple_rob(nums[:-1]), simple_rob(nums[1:]))
+
+# Test cases
+print(rob([2,3,2]))  # Expected output: 3
+print(rob([1,2,3,1]))  # Expected output: 4
+print(rob([1,2,3]))  # Expected output: 3
