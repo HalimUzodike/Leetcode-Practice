@@ -34,21 +34,25 @@ Constraints:
 """
 
 
-def rob(nums):
-    def simple_rob(nums):
-        rob1, rob2 = 0, 0
-        for n in nums:
-            newRob = max(rob1 + n, rob2)
-            rob1 = rob2
-            rob2 = newRob
-        return rob2
+from typing import List
 
-    if len(nums) == 1:
-        return nums[0]
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        def simple_rob(nums: List[int]) -> int:
+            rob1, rob2 = 0, 0
+            for n in nums:
+                newRob = max(rob1 + n, rob2)
+                rob1 = rob2
+                rob2 = newRob
+            return rob2
 
-    return max(simple_rob(nums[:-1]), simple_rob(nums[1:]))
+        if len(nums) == 1:
+            return nums[0]
+
+        return max(simple_rob(nums[:-1]), simple_rob(nums[1:]))
 
 # Test cases
-print(rob([2,3,2]))  # Expected output: 3
-print(rob([1,2,3,1]))  # Expected output: 4
-print(rob([1,2,3]))  # Expected output: 3
+solution = Solution()
+print(solution.rob([2, 3, 2]))  # Expected output: 3
+print(solution.rob([1, 2, 3, 1]))  # Expected output: 4
+print(solution.rob([1, 2, 3]))  # Expected output: 3
